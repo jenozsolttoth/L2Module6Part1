@@ -7,7 +7,8 @@ namespace L2Module6.Factories
     {
         public ILogger CreateLogger()
         {
-            return DatabaseLogger.Instance;
+            //return DatabaseLogger.Instance;
+            return null;
         }
     }
 }

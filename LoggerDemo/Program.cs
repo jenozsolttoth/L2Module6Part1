@@ -1,20 +1,18 @@
 ﻿using System;
 using System.Configuration;
+using L2Module6;
 using L2Module6.Factories;
+using L2Module6.Loggers;
+
 namespace LoggerDemo
 {
     class Program
     {
         static void Main(string[] args)
         {
-            var factory = GetFactory();
-            var logger = factory.CreateLogger();
-            logger.Log(L2Module6.LogLevel.CRITICAL, "MostImportantMethod","Such error, many critical, very issues.", new TimeoutException("issue"));
-        }
-        static ILoggerFactory GetFactory()
-        {
-            string factoryName = ConfigurationManager.AppSettings["LoggerFactory"];
-            return typeof(ILoggerFactory).Assembly.CreateInstance(factoryName) as ILoggerFactory;
+            var logger = Logger.Instance;
+            Logger.PersistenceStrategy = new ConsoleStrategy();
+            logger.Log(new LogObject(){Exception = new TimeoutException("sajtreszelo"), Level = LogLevel.Critical, Message = "No message", Method = "Method"});
         }
     }
 }

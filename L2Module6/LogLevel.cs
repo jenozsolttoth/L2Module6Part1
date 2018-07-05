@@ -1,12 +1,12 @@
 ﻿
 namespace L2Module6
 {
-    public enum LogLevel
+    public enum LogLevel : byte
     {
-        INFO = 0,
-        DEBUG = 1,
-        WARN = 2,
-        ERROR = 3,
-        CRITICAL = 4
+        Info = 1,
+        Debug = 2,
+        Warn = 3,
+        Error = 4,
+        Critical = 5
     }
 }

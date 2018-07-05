@@ -5,6 +5,6 @@ namespace L2Module6.Loggers
 {
     public interface ILogger
     {
-        void Log(LogLevel Level, string Method, string Message, Exception Exception);
+        void Log(LogObject obj);
     }
 }

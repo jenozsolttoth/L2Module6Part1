@@ -5,7 +5,8 @@ namespace L2Module6.Factories
     {
         public ILogger CreateLogger()
         {
-            return FileLogger.Instance;
+            //return FileLogger.Instance;
+            return null;
         }
     }
 }
